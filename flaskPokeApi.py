@@ -54,8 +54,10 @@ def mostrarPokemon(numeroOnombre):
     sprites=os.listdir('./static/spritesPokemon')
     numeroPokemon=0
     seEncontro=False
+    sprites.sort(key=lambda z:int(z.split('.')[0].split('-')[0]))
     for sprite in sprites:
         numeroPokemon=sprite.split('.')[0]
+        numeroPokemon=numeroPokemon.split('-')[0]
         if numeroOnombre==numeroPokemon or \
         numeroOnombre.upper() in sprite.upper():
             pokemonElegido=sprite
